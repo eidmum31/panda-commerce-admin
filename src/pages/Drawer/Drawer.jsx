@@ -25,7 +25,7 @@ const Drawer = () => {
           <Link className="">Promotions</Link>
           <Link>Orders</Link>
           <Link>Products</Link>
-          <Link>Add New Product</Link>
+          <Link to={'/products/new'}>Add New Product</Link>
 
         </ul>
       </div>

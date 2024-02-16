@@ -8,17 +8,15 @@ import {
 import Login from "../LogIn/LogIn";
 import ProductLayout from "../layout/ProductLayout";
 import Home from "../Home/Home";
-import Test from "../Test";
+
+import AddProduct from "../AddProduct/AddProduct";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Login></Login>,
   },
-  {
-    path:'/test',
-    element:<Test></Test>
-  },
+
   {
     path:"/products",
     element:<ProductLayout></ProductLayout>,
@@ -26,6 +24,11 @@ const router = createBrowserRouter([
         {
             path:'/products',
             element:<Home></Home>
+        }
+        ,
+        {
+            path:'/products/new',
+            element:<AddProduct></AddProduct>
         }
     ]
   }
