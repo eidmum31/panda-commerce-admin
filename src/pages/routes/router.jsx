@@ -2,20 +2,32 @@ import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import {
   createBrowserRouter,
-  RouterProvider,
+  
 } from "react-router-dom";
-import "./index.css";
-import LogIn from "../LogIn/LogIn";
+
+import Login from "../LogIn/LogIn";
+import ProductLayout from "../layout/ProductLayout";
+import Home from "../Home/Home";
+import Test from "../Test";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <LogIn></LogIn>,
+    element: <Login></Login>,
   },
+  {
+    path:'/test',
+    element:<Test></Test>
+  },
+  {
+    path:"/products",
+    element:<ProductLayout></ProductLayout>,
+    children:[
+        {
+            path:'/products',
+            element:<Home></Home>
+        }
+    ]
+  }
 ]);
-
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
-);
+export default router;
