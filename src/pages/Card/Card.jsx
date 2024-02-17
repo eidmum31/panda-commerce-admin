@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 
 const Card = ({product,products,setProducts}) => {
   
-  const {_id,title,price,img}=product;
+  const {_id,title,price,img,rate}=product;
  
   const deleteProduct=()=>{
     fetch(`https://panda-commerce-server.onrender.com/products/${_id}`,{
@@ -36,7 +36,7 @@ const Card = ({product,products,setProducts}) => {
           
           <div className="card-actions flex justify-between">
             <h3 className="text-xl font-semibold">{price}</h3>
-            <h3 className="text-xl font-semibold bg-yellow-300 p-1 rounded">15%</h3>
+            <h3 className="text-xl font-semibold bg-yellow-300 p-1 rounded">{rate}</h3>
           </div>
           <button onClick={deleteProduct} className="btn btn-primary">Delete</button>
         </div>
