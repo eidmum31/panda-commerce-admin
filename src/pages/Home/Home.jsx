@@ -11,7 +11,7 @@ const Home = () => {
     return (
         <div style={{margin:"0 auto"}} className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 mx-auto'>
            {
-            products&&products.map(product=><Card products={products} setProducts={setProducts} product={product} key={product._id}></Card>)
+            products.map(product=><Card products={products} setProducts={setProducts} product={product} key={product._id}></Card>)
            }
         </div>
     );
