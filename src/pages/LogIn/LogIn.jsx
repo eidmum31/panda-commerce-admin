@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../pages/Providers/Authprovider";
 import Swal from "sweetalert2";
 
 const Login = () => {
   const {loginUser}=useContext(AuthContext);
+  const navigate=useNavigate();
   console.log(loginUser);
   const handleLogin=(e)=>{
     e.preventDefault();
@@ -17,6 +18,10 @@ const Login = () => {
       // Signed in 
       const user = userCredential.user;
       console.log(user);
+      if(user)
+      {
+        navigate('/products');
+      }
       // ...
     })
     .catch((error) => {

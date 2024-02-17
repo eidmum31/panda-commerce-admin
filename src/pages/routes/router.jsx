@@ -13,6 +13,7 @@ import PromotionLayout from "../layout/PromotionLayout";
 import NewPromotion from "../../NewPromotion/NewPromotion";
 import Allpromotion from "../AllPromotion/Allpromotion";
 import EditPromotion from "../../EditPromotion/EditPromotion";
+import PrivateRouter from "./PrivateRouter";
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
 
   {
     path: "/products",
-    element: <ProductLayout></ProductLayout>,
+    element: <PrivateRouter><ProductLayout></ProductLayout></PrivateRouter>,
     children: [
       {
         path: "/products",
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/orders",
-    element: <OrderLayout></OrderLayout>,
+    element: <PrivateRouter><OrderLayout></OrderLayout></PrivateRouter>,
     children: [
       {
         path: "/orders",
@@ -62,7 +63,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/promotions",
-    element: <PromotionLayout></PromotionLayout>,
+    element: <PrivateRouter><PromotionLayout></PromotionLayout></PrivateRouter>,
     children: [
       {
         path: "/promotions/newPromotion",
@@ -73,7 +74,7 @@ const router = createBrowserRouter([
         element: <Allpromotion></Allpromotion>,
       },
       {
-        path: "/promotions/:id",
+        path: "/promotions/editPromotion",
         element: <EditPromotion></EditPromotion>,
         loader:({params})=>fetch(`http://127.0.0.1:3000/promotions/${params.id}`)
       }
