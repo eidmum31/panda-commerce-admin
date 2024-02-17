@@ -74,7 +74,7 @@ const router = createBrowserRouter([
         element: <Allpromotion></Allpromotion>,
       },
       {
-        path: "/promotions/editPromotion",
+        path: "/promotions/:id",
         element: <EditPromotion></EditPromotion>,
         loader:({params})=>fetch(`http://127.0.0.1:3000/promotions/${params.id}`)
       }

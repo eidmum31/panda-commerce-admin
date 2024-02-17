@@ -15,11 +15,12 @@ const Allpromotion = () => {
           {/* head */}
           <thead>
             <tr>
-              <th></th>
+              <th>SI</th>
               <th>Name</th>
               <th>Start</th>
               <th>End</th>
               <th>Discount Rate</th>
+              <th>Coupon Limit</th>
               <th>Actions</th>
             </tr>
           </thead>

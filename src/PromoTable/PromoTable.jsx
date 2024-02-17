@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const PromoTable = ({ promotion }) => {
-  const { _id, indx, promo, start, end, use, active, rate } = promotion;
+const PromoTable = ({ promotion ,indx}) => {
+  const { _id,  promo, start, end, use, active, rate} = promotion;
   const [tempStatus, setTempStatus] = useState(active);
-  
+  console.log(indx);
   const activePromo = () => {
     fetch(`http://127.0.0.1:3000/promotions/${_id}`, {
       method: "PATCH", // or 'PUT'
@@ -46,10 +46,12 @@ const PromoTable = ({ promotion }) => {
   return (
     <tr>
       <th>{indx}</th>
+      <th>{promo}</th>
       <td>{start}</td>
       <td>{end}</td>
-      <td>{use}</td>
+      
       <td>{rate}</td>
+      <td>{use}</td>
 
       <td>
         <Link to={`/promotions/${_id}`}><button className="btn btn-primary me-2">Edit</button></Link>

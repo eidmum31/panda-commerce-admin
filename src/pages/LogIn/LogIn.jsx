@@ -4,7 +4,7 @@ import { AuthContext } from "../../pages/Providers/Authprovider";
 import Swal from "sweetalert2";
 
 const Login = () => {
-  const {loginUser}=useContext(AuthContext);
+  const {loginUser,setLoading}=useContext(AuthContext);
   const navigate=useNavigate();
   console.log(loginUser);
   const handleLogin=(e)=>{
@@ -17,9 +17,9 @@ const Login = () => {
     .then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
-      console.log(user);
+      
       if(user)
-      {
+      { 
         navigate('/products');
       }
       // ...
