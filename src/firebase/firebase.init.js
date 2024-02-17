@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDmsWRokxdSqvaatB6YamO-JJ2iSH8J_ug",
-  authDomain: "panda-2f503.firebaseapp.com",
-  projectId: "panda-2f503",
-  storageBucket: "panda-2f503.appspot.com",
-  messagingSenderId: "785080094251",
-  appId: "1:785080094251:web:1c335fe581137b702d646e"
+  apiKey: "AIzaSyCfyH-Zcyd8m_6qLYB4nBD362xrQ7c-5B8",
+  authDomain: "panda-admin-34e5f.firebaseapp.com",
+  projectId: "panda-admin-34e5f",
+  storageBucket: "panda-admin-34e5f.appspot.com",
+  messagingSenderId: "178571704823",
+  appId: "1:178571704823:web:6f157536289f4d94f2d6f2"
 };
 
 // Initialize Firebase
