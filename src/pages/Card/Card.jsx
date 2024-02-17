@@ -2,10 +2,23 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../../../src/pages/Providers/Authprovider";
 import Swal from "sweetalert2";
 
-const Card = ({product}) => {
+const Card = ({product,products,setProducts}) => {
   
-  const {title,price,img}=product;
-  const {cart,setCart,setTotalPrice}=useContext(AuthContext);
+  const {_id,title,price,img}=product;
+ 
+  const deleteProduct=()=>{
+    fetch(`http://127.0.0.1:3000/products/${_id}`,{
+      method:"DELETE"
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      if(data.deletedCount){
+        Swal.fire("Produuct Deleted");
+        const newProducts=products.filter(x=>x._id!=_id);
+        setProducts(newProducts);
+      }
+    })
+  }
 
  
   return (
@@ -25,7 +38,7 @@ const Card = ({product}) => {
             <h3 className="text-xl font-semibold">{price}</h3>
             <h3 className="text-xl font-semibold bg-yellow-300 p-1 rounded">15%</h3>
           </div>
-          <button className="btn btn-primary">Add to cart</button>
+          <button onClick={deleteProduct} className="btn btn-primary">Delete</button>
         </div>
         
       </div>

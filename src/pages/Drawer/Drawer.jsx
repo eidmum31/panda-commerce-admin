@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Drawer = () => {
   return (
-    <div className="drawer lg:drawer-open">
+    <div className="drawer  lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col items-center justify-center">
         {/* Page content here */}
@@ -22,9 +22,9 @@ const Drawer = () => {
         ></label>
         <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content underline text-xl font-semibold gap-y-3">
           {/* Sidebar content here */}
-          <Link className="">Promotions</Link>
-          <Link>Orders</Link>
-          <Link>Products</Link>
+          <Link to={"/promotions"}>Promotions</Link>
+          <Link to={'/orders'}>Orders</Link>
+          <Link to={'/products'}>Products</Link>
           <Link to={'/products/new'}>Add New Product</Link>
 
         </ul>
