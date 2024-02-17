@@ -5,7 +5,7 @@ const Table = ({ order, indx }) => {
   const { _id, price, status } = order;
   const [tempStatus, setTempStatus] = useState(status);
   const confirmOrder = () => {
-    fetch(`http://127.0.0.1:3000/orders/${_id}`, {
+    fetch(`https://panda-commerce-server.onrender.com/orders/${_id}`, {
       method: "PATCH", // or 'PUT'
       headers: {
         "Content-Type": "application/json",
@@ -23,7 +23,7 @@ const Table = ({ order, indx }) => {
       });
   };
   const cancelOrder = () => {
-    fetch(`http://127.0.0.1:3000/orders/${_id}`, {
+    fetch(`https://panda-commerce-server.onrender.com/orders/${_id}`, {
       method: "PATCH", // or 'PUT'
       headers: {
         "Content-Type": "application/json",

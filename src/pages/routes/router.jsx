@@ -23,7 +23,11 @@ const router = createBrowserRouter([
 
   {
     path: "/products",
-    element: <PrivateRouter><ProductLayout></ProductLayout></PrivateRouter>,
+    element: (
+      <PrivateRouter>
+        <ProductLayout></ProductLayout>
+      </PrivateRouter>
+    ),
     children: [
       {
         path: "/products",
@@ -37,34 +41,58 @@ const router = createBrowserRouter([
   },
   {
     path: "/orders",
-    element: <PrivateRouter><OrderLayout></OrderLayout></PrivateRouter>,
+    element: (
+      <PrivateRouter>
+        <OrderLayout></OrderLayout>
+      </PrivateRouter>
+    ),
     children: [
       {
         path: "/orders",
         element: <All></All>,
-        loader: () => fetch(`http://127.0.0.1:3000/orders?category=all`),
+        loader: () =>
+          fetch(
+            `https://panda-commerce-server.onrender.com/orders?category=all`
+          ),
       },
       {
         path: "/orders/pending",
         element: <All></All>,
-        loader: () => fetch(`http://127.0.0.1:3000/orders?category=pending`),
+        loader: () =>
+          fetch(
+            `https://panda-commerce-server.onrender.com/orders?category=pending`
+          ),
       },
       {
         path: "/orders/cancelled",
         element: <All></All>,
-        loader: () => fetch(`http://127.0.0.1:3000/orders?category=cancelled`),
+        loader: () =>
+          fetch(
+            `https://panda-commerce-server.onrender.com/orders?category=cancelled`
+          ),
       },
       {
         path: "/orders/confirmed",
         element: <All></All>,
-        loader: () => fetch(`http://127.0.0.1:3000/orders?category=confirmed`),
+        loader: () =>
+          fetch(
+            `https://panda-commerce-server.onrender.com/orders?category=confirmed`
+          ),
       },
     ],
   },
   {
     path: "/promotions",
-    element: <PrivateRouter><PromotionLayout></PromotionLayout></PrivateRouter>,
+    element: (
+      <PrivateRouter>
+        <PromotionLayout></PromotionLayout>
+      </PrivateRouter>
+    ),
     children: [
+      {
+        path: "/promotions",
+        element: <Allpromotion></Allpromotion>,
+      },
       {
         path: "/promotions/newPromotion",
         element: <NewPromotion></NewPromotion>,
@@ -76,8 +104,11 @@ const router = createBrowserRouter([
       {
         path: "/promotions/:id",
         element: <EditPromotion></EditPromotion>,
-        loader:({params})=>fetch(`http://127.0.0.1:3000/promotions/${params.id}`)
-      }
+        loader: ({ params }) =>
+          fetch(
+            `https://panda-commerce-server.onrender.com/promotions/${params.id}`
+          ),
+      },
     ],
   },
 ]);

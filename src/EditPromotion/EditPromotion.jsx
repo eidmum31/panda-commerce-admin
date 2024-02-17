@@ -21,7 +21,7 @@ const EditPromotion = ({promotion}) => {
       use
       
     };
-    fetch(`http://127.0.0.1:3000/promotions/${_id}`, {
+    fetch(`https://panda-commerce-server.onrender.com/promotions/${_id}`, {
       method: "PATCH", // or 'PUT'
       headers: {
         "Content-Type": "application/json",

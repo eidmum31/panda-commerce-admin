@@ -19,7 +19,7 @@ const Login = () => {
       const user = userCredential.user;
       
       if(user)
-      { 
+      { setLoading(false);
         navigate('/products');
       }
       // ...

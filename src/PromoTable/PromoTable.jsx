@@ -7,7 +7,7 @@ const PromoTable = ({ promotion ,indx}) => {
   const [tempStatus, setTempStatus] = useState(active);
   console.log(indx);
   const activePromo = () => {
-    fetch(`http://127.0.0.1:3000/promotions/${_id}`, {
+    fetch(`https://panda-commerce-server.onrender.com/promotions/${_id}`, {
       method: "PATCH", // or 'PUT'
       headers: {
         "Content-Type": "application/json",
@@ -25,7 +25,7 @@ const PromoTable = ({ promotion ,indx}) => {
       });
   };
   const deactivePromo = () => {
-    fetch(`http://127.0.0.1:3000/promotions/${_id}`, {
+    fetch(`https://panda-commerce-server.onrender.com/promotions/${_id}`, {
       method: "PATCH", // or 'PUT'
       headers: {
         "Content-Type": "application/json",

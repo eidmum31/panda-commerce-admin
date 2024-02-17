@@ -7,7 +7,7 @@ const All = () => {
   const [orders, setOrders] = useState([]);
   useEffect(()=>{
     setOrders(data);
-  },[data])
+  },[])
   
 
 

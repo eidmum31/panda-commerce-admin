@@ -4,7 +4,7 @@ import PromoTable from "../../PromoTable/PromoTable";
 const Allpromotion = () => {
   const [promotions, setPromotions] = useState([]);
   useEffect(() => {
-    fetch("http://127.0.0.1:3000/promotions")
+    fetch("https://panda-commerce-server.onrender.com/promotions")
       .then((res) => res.json())
       .then((data) => setPromotions(data));
   }, []);

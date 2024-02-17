@@ -7,7 +7,7 @@ const Card = ({product,products,setProducts}) => {
   const {_id,title,price,img}=product;
  
   const deleteProduct=()=>{
-    fetch(`http://127.0.0.1:3000/products/${_id}`,{
+    fetch(`https://panda-commerce-server.onrender.com/products/${_id}`,{
       method:"DELETE"
     })
     .then(res=>res.json())

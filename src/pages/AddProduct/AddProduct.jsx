@@ -63,7 +63,7 @@ const AddProduct = () => {
         price: beforePrice - parseFloat(beforePrice) * (parseFloat(rate) / 100),
       };
       console.log(data);
-      fetch(`http://127.0.0.1:3000/products`, {
+      fetch(`https://panda-commerce-server.onrender.com/products`, {
         method: "POST", // or 'PUT'
         headers: {
           "Content-Type": "application/json",
